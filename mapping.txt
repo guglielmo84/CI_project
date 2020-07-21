@@ -1,0 +1,46 @@
+PUT databreach
+{
+  "mappings":{
+   "properties":{
+  
+  "date_made_public":{
+      "type": "date"
+    },
+    "company":{
+      "type":"text"
+    },
+    "city":{
+      "type":"text"
+    },
+    "state":{
+      "type":"text"
+    },
+    "type_of_breach": {
+      "type": "keyword"
+    },
+    "type_of_organization":{
+      "type": "keyword"
+    },
+    "total_records": {
+      "type":"long"
+    },
+    "description_of_incident":{
+      "type": "text"
+    },
+    "information_source":{
+      "type": "text"
+    },
+    "source_url": {
+      "type": "text"
+    },
+    "year_of_breach":{
+      "type": "date",
+      "format": "yyyy"
+    },
+    "geo":{
+ 	    "type": "geo_point",
+ 	    "ignore_malformed": true
+ 	    
+    } 
+   }
+}}
