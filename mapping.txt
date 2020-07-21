@@ -1,9 +1,12 @@
 PUT databreach
 {
+  "settings": {
+    "number_of_replicas": 0
+  },
   "mappings":{
    "properties":{
   
-  "date_made_public":{
+    "date_made_public":{
       "type": "date"
     },
     "company":{
