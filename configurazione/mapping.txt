@@ -1,22 +1,30 @@
 PUT databreach
 {
   "settings": {
-    "number_of_replicas": 0
-  },
+    "number_of_replicas": 0,
+    "analysis": {
+      "analyzer": {
+        "default_analyzer":{
+          "type": "standard",
+          "stopwords": "_english_"
+        }
+      }
+    }
+  }, 
   "mappings":{
    "properties":{
   
-    "date_made_public":{
+  "date_made_public":{
       "type": "date"
     },
     "company":{
-      "type":"text"
+      "type":"keyword"
     },
     "city":{
-      "type":"text"
+      "type":"keyword"
     },
     "state":{
-      "type":"text"
+      "type":"keyword"
     },
     "type_of_breach": {
       "type": "keyword"
@@ -28,13 +36,16 @@ PUT databreach
       "type":"long"
     },
     "description_of_incident":{
-      "type": "text"
+      "type": "text",
+      "analyzer": "default_analyzer"
     },
     "information_source":{
-      "type": "text"
+      "type": "text",
+      "analyzer": "default_analyzer"
     },
     "source_url": {
-      "type": "text"
+      "type": "text",
+      "analyzer": "default_analyzer"
     },
     "year_of_breach":{
       "type": "date",
