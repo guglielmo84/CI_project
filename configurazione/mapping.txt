@@ -1,15 +1,7 @@
-PUT databreach
+PUT datab_v2
 {
   "settings": {
-    "number_of_replicas": 0,
-    "analysis": {
-      "analyzer": {
-        "default_analyzer":{
-          "type": "standard",
-          "stopwords": "_english_"
-        }
-      }
-    }
+    "number_of_replicas": 0
   }, 
   "mappings":{
    "properties":{
@@ -37,15 +29,18 @@ PUT databreach
     },
     "description_of_incident":{
       "type": "text",
-      "analyzer": "default_analyzer"
+      "analyzer": "standard",
+      "fielddata": true
     },
     "information_source":{
       "type": "text",
-      "analyzer": "default_analyzer"
+      "analyzer": "standard",
+      "fielddata": true
     },
     "source_url": {
       "type": "text",
-      "analyzer": "default_analyzer"
+      "analyzer": "standard",
+      "fielddata": true
     },
     "year_of_breach":{
       "type": "date",
@@ -57,4 +52,6 @@ PUT databreach
  	    
     } 
    }
-}}
+}
+  
+}
